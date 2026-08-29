@@ -9,6 +9,7 @@ Skills live under `skills/` and are grouped by broad primary use case. Each Skil
 ```text
 skills/
 ├── coding-agents/
+│   ├── agent-first-project-bootstrap/
 │   └── harness-engineering-prompts/
 └── proposal/
     └── red-team-review/
@@ -18,6 +19,7 @@ skills/
 
 ### Coding agents
 
+- [`agent-first-project-bootstrap`](skills/coding-agents/agent-first-project-bootstrap/) — Bootstrap new AI-driven repositories with repository-local knowledge, mechanical invariants, deterministic feedback loops, and agent-legible development practices.
 - [`harness-engineering-prompts`](skills/coding-agents/harness-engineering-prompts/) — Draft implementation, milestone, and continuation prompts for Claude Code, Codex, and other coding agents using Harness Engineering principles.
 
 ### Proposal
