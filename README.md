@@ -1,71 +1,66 @@
 # agent-skills
 
-A curated collection of reusable agent skills for Claude Code and Codex.
+[![skills.sh installs](https://skills.sh/b/xju2/agent-skills)](https://skills.sh/xju2/agent-skills)
+
+A curated collection of reusable agent skills for Claude Code, Codex, and other agents that support the Agent Skills format.
 
 ## Install
 
-Clone the repository and run the interactive installer:
+Install interactively with the Skills CLI:
 
 ```bash
-git clone https://github.com/xju2/agent-skills.git
-cd agent-skills
-python3 install.py
+npx skills add xju2/agent-skills
 ```
 
-The installer lets you choose:
+The CLI discovers the skills in this repository and lets you choose which skills and agents to install them for. By default, skills are installed for the current project. Add `--global` to make them available across projects.
 
-- Claude Code, Codex, or both;
-- a user-wide or project-local installation;
-- one, several, or all available skills.
+### Common examples
 
-It copies each selected skill as a self-contained directory, including its references and other supporting files.
-
-### Non-interactive examples
-
-Install one skill for both agents in the current user's global skill directories:
+List the available skills without installing them:
 
 ```bash
-python3 install.py \
-  --agent claude \
-  --agent codex \
-  --skill harness-engineering-prompts
+npx skills add xju2/agent-skills --list
 ```
 
-Install selected skills into a project:
+Install one skill globally for Claude Code and Codex:
 
 ```bash
-python3 install.py \
+npx skills add xju2/agent-skills \
+  --skill review-before-coding \
+  --agent claude-code \
   --agent codex \
-  --scope project \
-  --project-root /path/to/project \
+  --global
+```
+
+Install several selected skills:
+
+```bash
+npx skills add xju2/agent-skills \
   --skill agent-first-project-bootstrap \
   --skill harness-engineering-prompts
 ```
 
-Install every skill for Claude Code:
+Install every skill:
 
 ```bash
-python3 install.py --agent claude --all
+npx skills add xju2/agent-skills --skill '*'
 ```
 
-Useful options:
+The CLI uses symlinks by default where supported so agents can share one installed copy. Pass `--copy` if you prefer independent copies in each agent's skill directory.
 
-```text
---list       List discoverable skills
---dry-run    Preview destinations without copying
---force      Replace an existing selected skill
+### Update or remove skills
+
+```bash
+# Update installed skills
+npx skills update
+
+# Remove a skill
+npx skills remove review-before-coding
 ```
 
-Existing skill directories are left untouched unless `--force` is specified.
+The Skills CLI collects anonymous installation telemetry. To opt out, set `DISABLE_TELEMETRY=1` or `DO_NOT_TRACK=1` when running it.
 
-### Installation locations
-
-| Agent | User-wide | Project-local |
-|---|---|---|
-| Claude Code | `~/.claude/skills/<skill-name>` | `<project>/.claude/skills/<skill-name>` |
-| Codex | `~/.agents/skills/<skill-name>` | `<project>/.agents/skills/<skill-name>` |
-
-Restart the agent after installing or updating skills so it can rediscover them.
+See the [Skills CLI documentation](https://github.com/vercel-labs/skills) for all supported agents and options.
 
 ## Repository layout
 
