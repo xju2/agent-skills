@@ -78,6 +78,25 @@ class InstallerTests(unittest.TestCase):
             self.assertTrue((target / "SKILL.md").is_file())
             self.assertFalse((target / "stale.txt").exists())
 
+    def test_force_unlinks_directory_symlink_without_removing_its_target(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            skill = self.make_skill(root, "source", "example")
+            destination = root / "destination"
+            destination.mkdir()
+            linked_directory = root / "linked-skill"
+            linked_directory.mkdir()
+            sentinel = linked_directory / "keep.txt"
+            sentinel.write_text("keep", encoding="utf-8")
+            (destination / skill.name).symlink_to(linked_directory, target_is_directory=True)
+
+            install.install_skill(skill, destination, force=True, dry_run=False)
+
+            target = destination / skill.name
+            self.assertFalse(target.is_symlink())
+            self.assertTrue((target / "SKILL.md").is_file())
+            self.assertEqual(sentinel.read_text(encoding="utf-8"), "keep")
+
     def test_user_scope_uses_home(self):
         with tempfile.TemporaryDirectory() as directory:
             previous = os.environ.get("HOME")

@@ -125,9 +125,11 @@ def install_skill(skill: Skill, destination: Path, *, force: bool, dry_run: bool
     staged = temporary / skill.name
     try:
         shutil.copytree(skill.path, staged)
-        if target.is_dir():
+        if target.is_symlink():
+            target.unlink()
+        elif target.is_dir():
             shutil.rmtree(target)
-        elif target.exists() or target.is_symlink():
+        elif target.exists():
             target.unlink()
         staged.replace(target)
     finally:
