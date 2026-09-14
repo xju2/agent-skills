@@ -65,17 +65,73 @@ Base the verdict on the project, not generic software advice. Consider:
 
 Do not default to agreement. If the request is weak, premature, duplicative, or over-engineered, say so plainly and offer a better path.
 
+## Apply the worth-doing scorecard
+
+Score each metric from 0 to 4. A higher score must always favor proceeding:
+
+| Metric | Weight | Evidence to evaluate |
+|---|---:|---|
+| Problem evidence | 15% | Tests, issues, logs, user feedback, duplication, documented limitations, or other proof that the problem exists and matters |
+| Expected value | 20% | Improvement to user outcomes, correctness, performance, reliability, scientific productivity, or developer efficiency |
+| Project alignment | 15% | Fit with documented architecture, roadmap, milestones, conventions, and current project maturity |
+| Leverage and urgency | 10% | Other work unblocked, recurring friction removed, reusable capability created, and whether the need is timely |
+| Implementation efficiency | 10% | Expected benefit relative to implementation effort and validation cost |
+| Maintenance sustainability | 10% | The project's ability to test, document, operate, support, and evolve the change |
+| Risk profile | 10% | How limited and manageable the security, reliability, compatibility, performance, and architectural risks are |
+| Opportunity cost | 5% | Whether this is a better use of effort than other priorities visible in the project |
+| Reversibility and learning | 5% | Ability to introduce the change incrementally, evaluate it objectively, and reverse it cheaply |
+
+Use these anchors consistently:
+
+- **0 — strongly unfavorable:** repository evidence argues directly against proceeding;
+- **1 — unfavorable:** likely cost, weakness, or mismatch outweighs value;
+- **2 — mixed or uncertain:** evidence is balanced, incomplete, or highly conditional;
+- **3 — favorable:** evidence supports proceeding with manageable qualifications;
+- **4 — strongly favorable:** direct evidence shows compelling value and a strong project fit.
+
+Calculate the weighted score on a 0–4 scale:
+
+`score = sum(metric score × metric weight) / 100`
+
+Map the result to the default verdict:
+
+- **3.20–4.00:** Worth doing now
+- **2.40–3.19:** Worth doing with revised scope
+- **1.60–2.39:** Defer
+- **0.00–1.59:** Not worth doing
+
+Treat these weights and thresholds as a consistent starting rubric, not a substitute for judgment. If documented project priorities justify different weighting, explain the deviation. Do not manipulate individual scores merely to reach a preferred verdict.
+
+Report evidence confidence separately:
+
+- **High:** supported by direct implementation evidence, tests, measurements, incidents, or actual user outcomes;
+- **Medium:** supported by architecture, plans, recurring code patterns, or closely analogous project experience;
+- **Low:** primarily inferred, with important evidence missing.
+
+A low-confidence assessment should not normally receive **Worth doing now** unless the proposed action is a small, reversible experiment.
+
+Apply these override conditions regardless of the numerical score:
+
+- a documented architecture, security, legal, or safety invariant would be violated;
+- the project already provides the requested capability;
+- success cannot be measured or validated;
+- a required prerequisite is missing;
+- the change creates disproportionate operational or maintenance responsibility;
+- a much smaller change would deliver nearly the same value.
+
+An override does not automatically mean rejection. Use it to cap the verdict at **Worth doing with revised scope** or **Defer**, or choose **Not worth doing** when the conflict is fundamental. Name the override explicitly.
+
 ## Give concise decision-ready feedback
 
 Use this structure unless the situation calls for something shorter:
 
 ### Verdict
 
-State one verdict and answer the worth-doing question in one or two direct sentences.
+State one verdict, the weighted score, and evidence confidence. Answer the worth-doing question in one or two direct sentences. Name any override that changed the score-based verdict.
 
 ### Project evidence
 
-List the few repository findings that materially support the judgment, with file paths or other precise references.
+List the few repository findings that materially support the judgment, with file paths or other precise references. Include a compact metric breakdown so the score can be audited without overwhelming the response.
 
 ### Tradeoffs
 
