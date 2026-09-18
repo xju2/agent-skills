@@ -72,8 +72,10 @@ skills/
 │   ├── agent-first-project-bootstrap/
 │   ├── harness-engineering-prompts/
 │   └── review-before-coding/
-└── proposal/
-    └── red-team-review/
+├── proposal/
+│   └── red-team-review/
+└── writing/
+    └── scientific-paper-writing/
 ```
 
 ## Skills
@@ -87,6 +89,10 @@ skills/
 ### Proposal
 
 - [`red-team-review`](skills/proposal/red-team-review/) — Red-team review support for funding proposals.
+
+### Writing
+
+- [`scientific-paper-writing`](skills/writing/scientific-paper-writing/) — Draft, revise, and review scientific papers for clear structure, precise claims, consistent notation, and publication-ready presentation, including AI/ML conference submissions.
 
 ## Organization principles
 

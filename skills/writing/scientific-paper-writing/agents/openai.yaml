@@ -1,0 +1,6 @@
+interface:
+  display_name: "Scientific Paper Writing"
+  short_description: "Draft and polish rigorous scientific papers"
+  default_prompt: "Use $scientific-paper-writing to revise this manuscript for clear structure, precise claims, and publication-ready prose."
+policy:
+  allow_implicit_invocation: true
