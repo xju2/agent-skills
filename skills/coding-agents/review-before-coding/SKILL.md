@@ -1,6 +1,6 @@
 ---
 name: review-before-coding
-description: Give brief, evidence-backed feedback on a requested software change before implementing it. Use when the user asks to build, add, modify, refactor, migrate, optimize, remove, or otherwise change code, configuration, tests, infrastructure, or repository contents. Inspect only the project evidence needed to sanity-check the request, state any important concern or improvement concisely, then proceed with the coding work unless a material issue requires the user's decision.
+description: Give brief, evidence-backed feedback on a requested software change before implementation. Use when the user asks to build, add, modify, refactor, migrate, optimize, remove, or otherwise change code, configuration, tests, infrastructure, or repository contents. Inspect only the project evidence needed to sanity-check the request, give concise feedback, then stop and wait for explicit user confirmation before making any coding changes. If the user is approving a review already completed by this skill and the scope is unchanged, proceed without repeating the review.
 ---
 
 # Review Before Coding
@@ -17,11 +17,13 @@ Use read-only inspection to look at only the repository evidence needed to under
 
 Do not perform a broad repository audit unless the request requires one.
 
+During this review, do not edit files, install dependencies, run generators or formatters, create branches, commit, push, open pull requests, or perform other mutating actions.
+
 ## Give brief feedback
 
-Before coding, tell the user what you think of the request.
+Tell the user what you think of the request before coding.
 
-Keep this feedback short and direct:
+Keep the feedback short and direct:
 
 - usually 1-3 bullets or a short paragraph;
 - focus only on observations that may affect the implementation;
@@ -31,12 +33,12 @@ Keep this feedback short and direct:
 
 Do not produce scores, weighted rubrics, confidence ratings, lengthy tradeoff analyses, or report-style sections. Do not argue at length about whether the work is "worth doing."
 
-If the request is sensible, say so briefly and continue. If there is a minor concern, mention it and continue with the best reasonable implementation.
+## Stop for confirmation
 
-Pause for the user's decision only when repository evidence reveals a material issue that changes the requested scope, conflicts with project constraints, creates significant risk, or leaves multiple consequential choices that cannot be resolved from the project.
+After the feedback, stop and wait for explicit user confirmation before making any coding changes.
 
-## Then implement
+End with a short confirmation question, for example: "Proceed with this implementation?"
 
-After the brief feedback, carry out the requested coding work using the project's normal instructions and validation practices.
+Approval such as "proceed", "go ahead", or an equally clear response unlocks implementation for the reviewed scope. Do not repeat the review after approval unless the user materially changes the request or new repository evidence invalidates the earlier feedback.
 
 If the user explicitly asks to skip the review, proceed directly to implementation.
