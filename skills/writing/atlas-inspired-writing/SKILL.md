@@ -22,6 +22,14 @@ Do not silently impose a preferred spelling system, citation style, section stru
 
 Never invent results, methods, citations, comparisons, limitations, or numerical precision. Do not strengthen a claim beyond the evidence provided. When information is missing, use a clearly marked placeholder only if the user asked for a draft that permits placeholders; otherwise flag the gap concisely.
 
+## Preserve meaning during edits
+
+When asked to improve writing or style, default to local sentence-level edits. Keep the author's scientific framing, argument, paragraph structure, and level of detail unless the user explicitly requests a substantive rewrite. Concision is not a reason to drop a motivation, contrast, qualification, condition, method, result, or citation.
+
+Before replacing a sentence or paragraph, identify each distinct point it makes and check that the revision still conveys all of them. For example, a sentence presenting both high collision energy and a clean experimental environment must retain both benefits. Do not turn a carefully qualified finding into a broader claim or turn a nuanced motivation into a generic statement.
+
+If a claim appears unsupported, a number conflicts with another part of the manuscript, or a structural change seems useful, flag it separately for the author. Do not silently resolve the issue by deleting context or rewriting the scientific interpretation. Before submitting a diff or pull request, compare each substantial edit against the original for omitted meaning; revert any edit whose benefit is merely shorter wording.
+
 ## Establish the paper's argument
 
 Before drafting or substantially restructuring, identify:
