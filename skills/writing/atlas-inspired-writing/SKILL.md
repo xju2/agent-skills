@@ -28,7 +28,7 @@ When asked to improve writing or style, default to local sentence-level edits. K
 
 Before replacing a sentence or paragraph, identify each distinct point it makes and check that the revision still conveys all of them. For example, a sentence presenting both high collision energy and a clean experimental environment must retain both benefits. Do not turn a carefully qualified finding into a broader claim or turn a nuanced motivation into a generic statement.
 
-If a claim appears unsupported, a number conflicts with another part of the manuscript, or a structural change seems useful, flag it separately for the author. Do not silently resolve the issue by deleting context or rewriting the scientific interpretation. Before submitting a diff or pull request, compare each substantial edit against the original for omitted meaning; revert any edit whose benefit is merely shorter wording.
+If a claim appears unsupported, a number conflicts with another part of the manuscript, or a structural change seems useful, flag it separately for the author. Do not silently resolve the issue by deleting context or rewriting the scientific interpretation. Before submitting a diff or pull request, compare each substantial edit against the original; retain concise improvements that preserve every scientific point, and revert edits that omit or change one.
 
 ## Establish the paper's argument
 
