@@ -1,9 +1,9 @@
 ---
-name: scientific-paper-writing
-description: Draft, revise, or review scientific papers for clear structure, concise prose, consistent terminology and notation, defensible claims, and publication-ready figures, tables, equations, and references. Use for abstracts, titles, introductions, methods, results, discussions, conclusions, captions, full manuscripts, and paper-style technical writing, including AI/ML conference submissions. Follow the target venue and the user's explicit requirements over this skill's defaults.
+name: atlas-inspired-writing
+description: Apply generally applicable ATLAS-inspired writing conventions when drafting, revising, or reviewing papers for clear structure, concise prose, consistent terminology and notation, defensible claims, and publication-ready figures, tables, equations, and references. Use for abstracts, titles, introductions, methods, results, discussions, conclusions, captions, full manuscripts, and paper-style technical writing, including AI/ML conference submissions. Follow the target venue and the user's explicit requirements over this skill's defaults.
 ---
 
-# Scientific Paper Writing
+# ATLAS-inspired Writing
 
 Write for technically capable readers who may not share the authors' narrow specialty. Make the scientific contribution easy to find, the reasoning easy to follow, and the strength of each claim proportionate to its evidence.
 
