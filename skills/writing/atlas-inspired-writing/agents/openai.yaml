@@ -1,0 +1,6 @@
+interface:
+  display_name: "ATLAS-inspired Writing"
+  short_description: "Apply ATLAS-inspired conventions to paper writing"
+  default_prompt: "Use $atlas-inspired-writing to revise this manuscript using generally applicable ATLAS writing conventions."
+policy:
+  allow_implicit_invocation: true

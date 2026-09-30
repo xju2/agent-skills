@@ -18,7 +18,7 @@ The installer lets you select skills and target agents. Add `--global` to instal
 - [`harness-engineering-prompts`](skills/coding-agents/harness-engineering-prompts/) — Create implementation and milestone prompts for coding agents using Harness Engineering principles.
 - [`review-before-coding`](skills/coding-agents/review-before-coding/) — Review whether a requested change is worth doing before implementation.
 - [`red-team-review`](skills/proposal/red-team-review/) — Red-team funding proposals.
-- [`scientific-paper-writing`](skills/writing/scientific-paper-writing/) — Draft and revise scientific papers, including AI/ML conference submissions.
+- [`atlas-inspired-writing`](skills/writing/atlas-inspired-writing/) — Apply ATLAS-inspired writing conventions to papers, including AI/ML conference submissions.
 
 ## Other useful skills and plugins
 
