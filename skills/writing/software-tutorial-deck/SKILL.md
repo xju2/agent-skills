@@ -3,7 +3,9 @@ name: software-tutorial-deck
 description: Build a software tutorial / integration walkthrough deck: goal and deliverables, progressive algorithm build, architecture swimlanes, code stage by stage, validation, baseline comparison, caveats and status.
 ---
 
-See the full SKILL.md body below (identical to the file exported for the GitHub merge request).
+# Software Tutorial Deck
+
+Build a slide deck that teaches how a piece of software works and where it lives in the code: what the algorithm does stage by stage, how it is integrated, how it was validated, and what is done and what is not. The audience should be able to follow the talk from slide titles and subtitle lines alone.
 
 ## When to use
 - A tutorial or walkthrough of a software component, pipeline, plugin or integration.
@@ -49,5 +51,12 @@ White background, one sans font, near-black bold titles top-left 32-36pt, body 1
 Every stage line carries a number or threshold; results bullets compare to baseline with both numbers; real identifiers in monospace; caveats stated plainly.
 
 ## Step 6: Build
-Master first; build one slide of each series, verify, then duplicate_slide for the rest so geometry is identical. Images via insertImage (width only). Run verify_slides + verify_slide_visual on every slide; trim code lines rather than shrinking below 9pt.
-Done when: all slides verified, breadcrumb highlight matches subtitle stage, slide 2 and Summary match.
+
+Use the presentation tooling the agent has. If a dedicated slide or PowerPoint skill is installed, follow it; otherwise build the `.pptx` with [python-pptx](https://python-pptx.readthedocs.io/) (`pip install python-pptx`):
+
+1. Set up the master first: slide size, fonts, colours, footer and page number, in the slide layouts rather than on each slide.
+2. Build one slide of each series (build step, code stage, backup) and verify it before making the rest. Create the others from the same layout with the same shape positions and sizes, so geometry is identical across a series; change only text, highlight and figure.
+3. Insert images with `slide.shapes.add_picture(path, left, top, width=...)`, giving the width only so the aspect ratio is kept.
+4. Render every slide and look at it: `soffice --headless --convert-to pdf deck.pptx` then `pdftoppm -png -r 80 deck.pdf slide`, and inspect each PNG for overflow, overlap and text below 9 pt. Trim code lines rather than shrinking the font.
+
+Done when: every slide has been rendered and inspected, the breadcrumb highlight matches the subtitle stage on every code slide, and slide 2 and the Summary use identical deliverable wording.

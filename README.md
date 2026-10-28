@@ -19,6 +19,7 @@ The installer lets you select skills and target agents. Add `--global` to instal
 - [`review-before-coding`](skills/coding-agents/review-before-coding/) — Review whether a requested change is worth doing before implementation.
 - [`red-team-review`](skills/proposal/red-team-review/) — Red-team funding proposals.
 - [`atlas-inspired-writing`](skills/writing/atlas-inspired-writing/) — Apply ATLAS-inspired writing conventions to papers, including AI/ML conference submissions.
+- [`software-tutorial-deck`](skills/writing/software-tutorial-deck/) — Build software tutorial and integration walkthrough decks: progressive algorithm build, code stage by stage, validation, caveats and status.
 
 ## Other useful skills and plugins
 
