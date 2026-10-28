@@ -2,7 +2,10 @@
 
 ## Markup (generated per page)
 
+The explorer sits in a section with a stable `id`; the URL writer uses it as the anchor.
+
 ```html
+<section id="explore">
 <div class="explorer" data-kind="tokenizer" data-src="../tokenizer/explorer.json"
      data-base="../" data-version="docs/validation_v13">
   <div class="ex-top">
@@ -14,14 +17,18 @@
     <!-- one pill per view; data-title is the card title -->
   </div>
   <div class="ex-card">
-    <div class="ex-head"><h3 class="ex-title"></h3><button class="ex-download">⤓</button></div>
+    <div class="ex-head"><h3 class="ex-title"></h3><button type="button" class="ex-download"
+        aria-label="Download the data behind this chart (CSV)" title="Download data (CSV)">⤓</button></div>
     <div class="ex-controls"></div>   <!-- in-card menus the view needs -->
     <div class="ex-legend"></div>
     <div class="ex-body chart"></div>
     <p class="ex-caption"></p>
   </div>
 </div>
+</section>
 ```
+
+The download icon is decorative; the `aria-label` names the action for screen readers.
 
 ## Data bundle (one JSON per explorer)
 
@@ -65,7 +72,10 @@ function explorer(root) {
       if (!touched) return;
       const u = new URLSearchParams(location.search);
       u.set("tab", S.tab); u.set("field", S.field);
-      history.replaceState(null, "", `${location.pathname}?${u}#${root.closest("section").id}`);
+      // Persist the version too, unless it is the page's own result (keeps links short).
+      if (S.version !== root.dataset.version) u.set("v", S.version); else u.delete("v");
+      const anchor = root.closest("section[id]")?.id;
+      history.replaceState(null, "", `${location.pathname}?${u}${anchor ? `#${anchor}` : ""}`);
     };
     render();
   });
