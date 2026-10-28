@@ -1,0 +1,6 @@
+interface:
+  display_name: "Scientific Results Website"
+  short_description: "Publish research results as a curated overview plus a structured results library"
+  default_prompt: "Use $scientific-results-website to publish this project's results as a static website with a curated overview and a structured, explorable results library."
+policy:
+  allow_implicit_invocation: true
