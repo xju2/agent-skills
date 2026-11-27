@@ -1,6 +1,6 @@
 ---
 name: mattermost-digest
-description: Summarize Mattermost channel messages over a time window (last week by default) into a short digest of topics, decisions, open questions and requests aimed at the user. Use when the user asks to summarize, catch up on, recap or digest Mattermost messages or channels, asks "what happened in <channel>" or "what did I miss", or runs /mattermost-digest, optionally with channel names and a period such as "last week", "this week", "past 3 days" or explicit dates. Needs read-only Mattermost MCP tools that list channels and read channels, threads and search results.
+description: Summarize Mattermost channel messages over a time window (last week by default) into a short digest of topics, decisions, open questions and requests aimed at the user. Use when the user asks to summarize, catch up on, recap or digest Mattermost messages or channels, asks what happened in a channel or what they missed, or runs /mattermost-digest, optionally with channel names and a period such as "last week", "this week", "past 3 days" or explicit dates. Needs read-only Mattermost MCP tools that list channels and read channels, threads and search results.
 ---
 
 # Mattermost Digest
