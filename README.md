@@ -21,6 +21,7 @@ The installer lets you select skills and target agents. Add `--global` to instal
 - [`atlas-inspired-writing`](skills/writing/atlas-inspired-writing/) — Apply ATLAS-inspired writing conventions to papers, including AI/ML conference submissions.
 - [`software-tutorial-deck`](skills/writing/software-tutorial-deck/) — Build software tutorial and integration walkthrough decks: progressive algorithm build, code stage by stage, validation, caveats and status.
 - [`scientific-results-website`](skills/writing/scientific-results-website/) — Publish research results as a curated overview page plus a structured, explorable results library.
+- [`mattermost-digest`](skills/communication/mattermost-digest/) — Summarize Mattermost channels over a period (last week by default): topics, decisions, open questions and what needs your attention. Needs read-only Mattermost MCP tools.
 
 ## Other useful skills and plugins
 
